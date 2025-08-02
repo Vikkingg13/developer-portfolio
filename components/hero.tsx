@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, ChevronDown } from "lucide-react"
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState("")
-  const fullText = "Fullstack Developer"
+  const fullText = "Full Stack Developer"
 
   useEffect(() => {
     let index = 0
@@ -48,7 +48,7 @@ export default function Hero() {
 
         <div className="flex justify-center space-x-6 mb-12">
           <a
-            href="https://github.com"
+            href="https://github.com/Vikkingg13"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow hover:scale-105 transform"
@@ -56,7 +56,7 @@ export default function Hero() {
             <Github size={24} className="text-gray-700" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/viktor-grigoriev"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow hover:scale-105 transform"
@@ -64,7 +64,7 @@ export default function Hero() {
             <Linkedin size={24} className="text-blue-600" />
           </a>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:vikkingg13@gmail.com"
             className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow hover:scale-105 transform"
           >
             <Mail size={24} className="text-green-600" />
