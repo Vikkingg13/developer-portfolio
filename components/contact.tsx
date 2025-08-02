@@ -25,17 +25,39 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
+    setSubmitStatus("idle")
+  
+    try {
+      // Отправляем POST запрос на ваш API endpoint
+      const response = await fetch('https://n8n.caprover.vikking.xyz/webhook/send_form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+  
+      if (response.ok) {
+        // Успешная отправка
+        setSubmitStatus("success")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+        
+        // Сбрасываем статус через 3 секунды
+        setTimeout(() => {
+          setSubmitStatus("idle")
+        }, 3000)
+      } else {
+        // Ошибка сервера
+        setSubmitStatus("error")
+        console.error('Ошибка отправки:', response.statusText)
+      }
+    } catch (error) {
+      // Ошибка сети или другая ошибка
+      setSubmitStatus("error")
+      console.error('Ошибка:', error)
+    } finally {
       setIsSubmitting(false)
-      setSubmitStatus("success")
-      setFormData({ name: "", email: "", subject: "", message: "" })
-
-      setTimeout(() => {
-        setSubmitStatus("idle")
-      }, 3000)
-    }, 1000)
+    }
   }
 
   return (
@@ -60,7 +82,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900">Email</h4>
-                  <p className="text-gray-600">your.email@example.com</p>
+                  <p className="text-gray-600">vikkingg13@gmail.com</p>
                 </div>
               </div>
 
@@ -69,8 +91,8 @@ export default function Contact() {
                   <Phone className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-900">Телефон</h4>
-                  <p className="text-gray-600">+7 (999) 123-45-67</p>
+                  <h4 className="font-medium text-gray-900">WhatsApp</h4>
+                  <p className="text-gray-600">+375 (44) 488-40-66</p>
                 </div>
               </div>
 
@@ -80,7 +102,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900">Локация</h4>
-                  <p className="text-gray-600">Москва, Россия</p>
+                  <p className="text-gray-600">Гродненская область, Беларусь</p>
                 </div>
               </div>
             </div>
@@ -88,7 +110,7 @@ export default function Contact() {
             <div className="mt-8 p-6 bg-blue-50 rounded-lg">
               <h4 className="font-semibold text-gray-900 mb-2">Время ответа</h4>
               <p className="text-gray-600 text-sm">
-                Обычно отвечаю в течение 24 часов. Для срочных вопросов лучше звонить или писать в Telegram.
+                Обычно отвечаю в течение 24 часов. Для срочных вопросов лучше писать в WhatsApp или использовать форму справа.
               </p>
             </div>
           </div>
@@ -179,6 +201,12 @@ export default function Contact() {
               {submitStatus === "success" && (
                 <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                   <p className="text-green-800 text-sm">Спасибо за сообщение! Я свяжусь с вами в ближайшее время.</p>
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 text-sm">Произошла ошибка при отправке. Попробуйте еще раз или свяжитесь со мной напрямую.</p>
                 </div>
               )}
             </form>
