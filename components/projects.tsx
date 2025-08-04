@@ -52,7 +52,7 @@ export default function Projects() {
       id: 4,
       title: "WhatsApp бот для денежный переводов",
       description: "WhatsApp бот для денежный переводов, поддерживает множество платёжных систем.",
-      image: "/payGo-project.jpg?height=300&width=400",
+      image: "/paygo.png?height=300&width=400",
       technologies: ["N8n", "JavaScript", "API Integrations"],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
