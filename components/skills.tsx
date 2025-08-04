@@ -12,18 +12,19 @@ export default function Skills() {
   const [animatedLevels, setAnimatedLevels] = useState<{ [key: string]: number }>({})
 
   const skills: Skill[] = [
-    { name: "React", level: 90, category: "Frontend" },
-    { name: "TypeScript", level: 85, category: "Frontend" },
-    { name: "JavaScript", level: 95, category: "Frontend" },
+    { name: "Next.js", level: 75, category: "Frontend" },
+    { name: "Python", level: 70, category: "Backend" },
+    { name: "React", level: 70, category: "Frontend" },
+    { name: "TypeScript", level: 75, category: "Frontend" },
+    { name: "JavaScript", level: 65, category: "Frontend" },
     { name: "HTML/CSS", level: 90, category: "Frontend" },
-    { name: "Tailwind CSS", level: 80, category: "Frontend" },
-    { name: "Node.js", level: 75, category: "Backend" },
-    { name: "Express.js", level: 70, category: "Backend" },
-    { name: "MongoDB", level: 65, category: "Backend" },
+    { name: "Java", level: 85, category: "Backend" },
+    { name: "Spring", level: 80, category: "Backend" },
+    { name: "PostgreSQL", level: 65, category: "Backend" },
     { name: "Git", level: 85, category: "Tools" },
-    { name: "Webpack", level: 70, category: "Tools" },
-    { name: "Jest", level: 75, category: "Tools" },
-    { name: "Figma", level: 60, category: "Design" },
+    { name: "Docker", level: 75, category: "Tools" },
+    { name: "CI/CD", level: 65, category: "Tools" },
+    { name: "N8n", level: 85, category: "No-Code" },
   ]
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export default function Skills() {
     return () => clearTimeout(timer)
   }, [])
 
-  const categories = ["Frontend", "Backend", "Tools", "Design"]
+  const categories = ["Backend", "Frontend","Tools", "No-Code"]
 
   return (
     <section className="py-20 bg-white">
@@ -83,15 +84,15 @@ export default function Skills() {
           <h3 className="text-xl font-semibold text-gray-900 mb-6">Дополнительные навыки</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              "Responsive Design",
+              "Telegram API",
               "REST API",
-              "GraphQL",
-              "Redux",
-              "Context API",
-              "Styled Components",
-              "Material-UI",
-              "Framer Motion",
-              "PWA",
+              "Keycloak",
+              "MongoDB",
+              "Hibernate",
+              "OpenAPI",
+              "LLM",
+              "Blockchain",
+              "Linux",
               "Performance Optimization",
             ].map((skill) => (
               <span key={skill} className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">

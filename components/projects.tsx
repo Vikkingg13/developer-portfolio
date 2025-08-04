@@ -20,43 +20,43 @@ export default function Projects() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "Полнофункциональная платформа электронной коммерции с корзиной покупок, платежами и админ-панелью.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React", "TypeScript", "Node.js", "MongoDB"],
+      title: "Платёжный сервис для интернет магазина",
+      description: "Платёжный сервис для интернет магазина, который предлагает новой способ оплаты для покупателей и повышает конверсию для бизнеса.",
+      image: "/ggwp.png?height=300&width=400",
+      technologies: ["Java", "Next.js", "Python", "Telegram API"],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
       category: "web",
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "Приложение для управления задачами с drag-and-drop функциональностью и командной работой.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React", "Redux", "Firebase", "Material-UI"],
+      title: "Telegram бот для поиска научных статей",
+      description: "Telegram бот, который ежедневно отправляет пользователю научные статьи на основе его интересов.",
+      image: "/research-feed.png?height=300&width=400",
+      technologies: ["Java", "Python", "Telegram API", "Ollama"],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
       category: "app",
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "Интерактивный дашборд погоды с прогнозами, картами и уведомлениями.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React", "Chart.js", "OpenWeather API", "Tailwind CSS"],
+      title: "Сервис заметок",
+      description: "Сервис заметок и планирования задач, который помогаем пользователям организовать свою деятельность.",
+      image: "/notes.png?height=300&width=400",
+      technologies: ["Java", "Spring", "React", "TypeScript"],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
       category: "web",
     },
     {
       id: 4,
-      title: "Portfolio Website",
-      description: "Адаптивный сайт-портфолио с анимациями и современным дизайном.",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React", "Framer Motion", "Tailwind CSS"],
+      title: "WhatsApp бот для денежный переводов",
+      description: "WhatsApp бот для денежный переводов, поддерживает множество платёжных систем.",
+      image: "/PayGo.jpg?height=300&width=400",
+      technologies: ["N8n", "JavaScript", "API Integrations"],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
-      category: "web",
+      category: "app",
     },
   ]
 
@@ -115,27 +115,6 @@ export default function Projects() {
                       {tech}
                     </span>
                   ))}
-                </div>
-
-                <div className="flex space-x-4">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
-                  >
-                    <Github size={20} />
-                    <span>Код</span>
-                  </a>
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors"
-                  >
-                    <ExternalLink size={20} />
-                    <span>Демо</span>
-                  </a>
                 </div>
               </div>
             </div>

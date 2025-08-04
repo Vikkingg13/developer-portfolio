@@ -11,7 +11,7 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <img src="/placeholder.svg?height=400&width=400" alt="Developer at work" className="rounded-lg shadow-lg" />
+            <img src="/developer-at-work-2.png?height=800&width=800" alt="Developer at work" className="rounded-lg shadow-lg" />
           </div>
 
           <div>
